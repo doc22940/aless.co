@@ -6,13 +6,11 @@ spoiler: How 2 SRS?
 
 I am far from the first person to say this: learning via Spaced Repetition System (SRS) feels like magic.
 
-SRS refers to a learning technique that typically involves flashcards. It's been around since the sixties, but modern incarnations usually involve software (surprise!). One popular free web and iOS app, [Anki](https://ankiweb.net), allows users to build decks of flashcards. Users respond to the questions they've written, but here's the catch that makes it so effective: the app decides what material needs to be reviewed, and when. Fro our friend [Wikipedia](https://en.wikipedia.org/wiki/Spaced_repetition):
+For the uninitiated, SRS refers to a learning technique that typically involves flashcards. It's been around since the sixties, but modern incarnations usually involve software (surprise!). One popular free web and iOS app, [Anki](https://ankiweb.net), allows users to build decks of flashcards and respond to the questions they've written. The feature that makes it so effective? The app decides what material needs to be reviewed, and when. From our friend [Wikipedia](https://en.wikipedia.org/wiki/Spaced_repetition):
 
 > Newly introduced and more difficult flashcards are shown more frequently while older and less difficult flashcards are shown less frequently in order to exploit the psychological spacing effect.
 
-What's the "psychological spacing effect", you say? It's basically the corollary of the cliché about how you won't be able to remember anything if you study by "cramming", bolstered by [science](https://journals.sagepub.com/doi/abs/10.1177/1745691616645770?icid=int.sj-abstract.similar-articles.3&journalCode=ppsa): reviewing learning materials at spaced intervals over time increases retention.
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">wow <a href="https://t.co/wfX14Enz3H">https://t.co/wfX14Enz3H</a> really just tricked me into learning how to write regexes... just typed /^\$\d+\.\d\d$/ on the first shot like I was possessed</p>&mdash; alessia (@alessbell) <a href="https://twitter.com/alessbell/status/1157399657863090176?ref_src=twsrc%5Etfw">August 2, 2019</a></blockquote>
+The "psychological spacing effect" is basically the corollary of the cliché about how you won't be able to remember anything if you study by "cramming", bolstered by [science](https://journals.sagepub.com/doi/abs/10.1177/1745691616645770?icid=int.sj-abstract.similar-articles.3&journalCode=ppsa): reviewing learning materials at spaced intervals over time increases retention.
 
 ## /SRS.(rb|js|rs)/
 
