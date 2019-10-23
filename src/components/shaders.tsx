@@ -5,8 +5,8 @@ import useTimer from '../lib/useTimer';
 const m = 0.3;
 const interval = 2000;
 
-const shaders = Shaders.create({
-  redWave: {
+export const shaderObjs = {
+  RedWave: {
     frag: GLSL`
     precision highp float;
     varying vec2 uv;
@@ -15,7 +15,7 @@ const shaders = Shaders.create({
       gl_FragColor = vec4(red * ${m}, uv.x, uv.y, 1.0);
     }`,
   },
-  greenWave: {
+  GreenWave: {
     frag: GLSL`
     precision highp float;
     varying vec2 uv;
@@ -24,7 +24,7 @@ const shaders = Shaders.create({
       gl_FragColor = vec4(uv.x, green * ${m}, uv.y, 1);
     }`,
   },
-  blueWave: {
+  BlueWave: {
     frag: GLSL`
     precision highp float;
     varying vec2 uv;
@@ -33,13 +33,15 @@ const shaders = Shaders.create({
       gl_FragColor = vec4(uv.x, uv.y, blue * ${m}, 1.0);
     }`,
   },
-});
+};
+
+const shaders = Shaders.create(shaderObjs);
 
 const RedWave: React.FC = () => {
   const time = useTimer();
   return (
     <Node
-      shader={shaders && shaders.redWave}
+      shader={shaders && shaders.RedWave}
       uniforms={{ red: 0.9 + 0.9 * Math.cos(time / interval) }}
     />
   );
@@ -49,7 +51,7 @@ const GreenWave: React.FC = () => {
   const time = useTimer();
   return (
     <Node
-      shader={shaders && shaders.greenWave}
+      shader={shaders && shaders.GreenWave}
       uniforms={{ green: 0.9 + 0.9 * Math.cos(time / interval) }}
     />
   );
@@ -59,7 +61,7 @@ const BlueWave: React.FC = () => {
   const time = useTimer();
   return (
     <Node
-      shader={shaders && shaders.blueWave}
+      shader={shaders && shaders.BlueWave}
       uniforms={{ blue: 0.9 + 0.9 * Math.cos(time / interval) }}
     />
   );

@@ -62,7 +62,7 @@ const typography = new Typography({
     footer: {
       fontSize: '16px',
     },
-    'pre,code': {
+    'pre,code,textarea,pre': {
       fontFamily: `${fonts.GTPressuraRegular}, monospace`,
     },
   }),
