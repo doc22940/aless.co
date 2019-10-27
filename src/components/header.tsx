@@ -25,6 +25,16 @@ const Header: React.FC = () => {
     });
   }
 
+  // const RedWave = () => {
+  //   const time = useTimer();
+  //   return (
+  //     <Node
+  //       shader={shaders && shaders.RedWave}
+  //       uniforms={{ red: 0.9 + 0.9 * Math.cos(time / interval) }}
+  //     />
+  //   );
+  // };
+
   const scope = {
     styled,
     shaderObjs,
@@ -41,28 +51,31 @@ const Header: React.FC = () => {
 
   const code = `
   const m = 0.3;
-  const shaders = Shaders.create({RedWave: {
-    frag: GLSL\`
-    precision highp float;
-    varying vec2 uv;
-    uniform float red;
-    void main() {
-      gl_FragColor = vec4(red * \${m}, uv.x, uv.y, 1.0);
-    }\`,
-  },});
   const interval = 2000;
 
-  const RedWave = () => {
+  const shaders = Shaders.create({
+    Wave: {
+      frag: GLSL\`
+      precision highp float;
+      varying vec2 uv;
+      uniform float red;
+      void main() {
+        gl_FragColor = vec4(red * \${m}, uv.x, uv.y, 1.0);
+      }\`,
+    }
+  });
+
+  const Wave = () => {
     const time = useTimer();
     return (
       <Node
-        shader={shaders && shaders.RedWave}
+        shader={shaders.Wave}
         uniforms={{ red: 0.9 + 0.9 * Math.cos(time / interval) }}
       />
     );
   };
 
-  render(<Surface width={253} height={47}><RedWave /></Surface>)
+  render(<Surface width={253} height={47}><Wave /></Surface>)
 `;
 
   // const randomize = () => Math.floor(Math.random() * shaderComponents.length);
@@ -86,13 +99,21 @@ const Header: React.FC = () => {
             <LiveEditor
               style={{
                 padding: '0',
-                background: 'blue',
+                background: '#f7f7f7',
                 borderRadius: '5px',
                 fontFamily: 'GT Pressura Mono Regular',
                 fontSize: '14px',
               }}
             />
-            <LiveError />
+            <LiveError
+              style={{
+                padding: '0',
+                background: '#f7f7f7',
+                borderRadius: '5px',
+                fontFamily: 'GT Pressura Mono Regular',
+                fontSize: '14px',
+              }}
+            />
             <LivePreview
               style={{ position: 'absolute', top: '0', ...mixBlendMode }}
             />
