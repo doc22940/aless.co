@@ -1,12 +1,13 @@
 ---
 title: Compose<Function>
-date: '2019-08-08T19:09:59.546Z'
+date: '2020-04-25T19:09:59.546Z'
 spoiler: How 2 SRS?
+keywords: ['programming']
 ---
 
 I am far from the first person to say this: learning via Spaced Repetition System (SRS) feels like magic.
 
-For the uninitiated, SRS refers to a learning technique that typically involves flashcards. It's been around since the sixties, but modern incarnations usually involve software (surprise!). One popular free web and iOS app, [Anki](https://ankiweb.net), allows users to build decks of flashcards and respond to the questions they've written. The feature that makes it so effective? The app decides what material needs to be reviewed, and when. From our friend [Wikipedia](https://en.wikipedia.org/wiki/Spaced_repetition):
+SRS refers to a learning technique that typically involves flashcards. It's been around since the sixties, but modern incarnations usually involve software (surprise!). One popular free web and iOS app, [Anki](https://ankiweb.net), allows users to build decks of flashcards and respond to the questions they've written. The feature that makes it so effective? The app decides what material needs to be reviewed, and when. From our friend [Wikipedia](https://en.wikipedia.org/wiki/Spaced_repetition):
 
 > Newly introduced and more difficult flashcards are shown more frequently while older and less difficult flashcards are shown less frequently in order to exploit the psychological spacing effect.
 
@@ -49,6 +50,6 @@ Expected: type error OK!
 
 ```ts
 function compose<A>(f: (arg: A) => A, g: (arg: A) => A): (arg: A) => A {
-  return x => f(g(x));
+  return (x) => f(g(x));
 }
 ```
