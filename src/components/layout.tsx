@@ -7,6 +7,17 @@ import Header from './header';
 import Toggle from './toggle';
 import Footer from './footer';
 
+import { FeedbackFish } from '@feedback-fish/react';
+
+const App = () => {
+  // Get your projectId from your dashboard at feedback.fish/app
+  return (
+    <FeedbackFish projectId="07b886e9d1eca4">
+      <>Send feedback</>
+    </FeedbackFish>
+  );
+};
+
 declare global {
   interface Window {
     __onThemeChange: () => void;
@@ -307,6 +318,9 @@ const Layout: React.FunctionComponent = ({ children }) => {
         <BottomBar />
         <LeftBar />
         <RightBar />
+        <FeedbackFish projectId="07b886e9d1eca4">
+          <button>Send feedback</button>
+        </FeedbackFish>
       </div>
     </ThemeContext.Provider>
   );
